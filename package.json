@@ -1,0 +1,34 @@
+{
+  "name": "ci-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm-run-all --serial test:unit test:integration",
+    "start": "node index.js",
+    "test:lint": "eslint *.js '*.js'",
+    "test:unit": "mocha '*.spec.js'",
+    "test:integration": "cd ./test && ./test.sh",
+    "test:coverage": "istanbul cover ./node_modules/mocha/bin/_mocha -x *.spec.js -- '*.spec.js'",
+    "test:checkcoverage": "istanbul check-coverage ./coverage/coverage*.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cvrabie/ci-test.git"
+  },
+  "author": "Cristian Vrabie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cvrabie/ci-test/issues"
+  },
+  "homepage": "https://github.com/cvrabie/ci-test#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "npm-run-all": "^4.0.2"
+  },
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}

@@ -1,0 +1,10 @@
+verbose: false
+reporting:
+    print: summary
+    dir: ./coverage
+check:
+    global:
+        statements: 65
+        lines: 65
+        branches: 60
+        functions: 65
